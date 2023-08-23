@@ -1,0 +1,67 @@
+<div class="footer text-muted">
+    &copy; 2022. <span class="info">Trans-it</span> by<a href="https://www.cqlsys.com/">CQLSYS</a>
+
+</div>
+<script>
+    setTimeout(function () {
+        $("div.msg").fadeOut();
+    }, 2000);
+</script>
+<script>
+function confirmDelete(id, model) {
+
+    console.log("------------------------------------", id,model)
+    
+
+    // var model=$('#button').attr(model).val()
+    console.log(model);
+
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+    })
+
+    swalWithBootstrapButtons.fire({
+        title: 'Are you sure?',
+        text: "Are You sure want to delete this skill?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, cancel!',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: "/deletedata/:id",
+                
+                type: 'post',
+                data: {
+                    id: id,
+                    model: model,
+                },
+                success: function (result) {
+                }
+            });
+            swalWithBootstrapButtons.fire(
+                'Deleted!',
+                'Your has been deleted.',
+                'success'
+            ).then(() => {
+                location.reload();
+            })
+        } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire(
+                'Cancelled',
+                'Your file is safe :)',
+                'error'
+            )
+        }
+    })
+}
+</script>

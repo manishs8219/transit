@@ -1,0 +1,128 @@
+<%- include("../partials/header")%>
+<style>
+    label.form-label {
+        margin-top: 6px;
+        margin-left: 3px;
+    }
+
+    span.badge.bg-primary {
+        font-size: 20px;
+    }
+
+    span.badge.bg-primary {
+        font-size: 20px;
+    }
+
+    button.btn.btn-danger.btn-rounded {
+        margin-top: 8px;
+    }
+
+    img#blah {
+        border-radius: 33px;
+        margin-left: 133px;
+    }
+
+    .sd button.btn.btn-danger.btn-rounded {
+        margin-right: 0;
+    }
+
+    .user_pr {
+
+        padding: 15px;
+    }
+    input.form-control {
+    padding: 34px;
+   
+}
+* {
+  box-sizing: border-box;
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+</style>
+
+<body>
+    <%- include("../partials/navbar")%>
+    <%- include("../partials/sidebar")%>
+
+
+
+
+
+    <div class="content">
+        <div class="panel panel-flat">
+            <div class="panel-body">
+                <h2 class="text-bold">Booking View</h2>
+                </h1>
+                <div class="col-md-6">
+                    <div class="user_pr">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            
+                            <div class="form-group">
+                                <label for="" class="form-label">Car Name</label>
+                                <input type="text" value="<%=bookings_view.car_name %>" class="form-control" disabled>
+                            </div>
+                           
+                          
+                            <div class="form-group">
+                                <label for="" class="form-label">Car Model</label>
+                                <input type="text" value="<%=bookings_view.car_model %>" class="form-control" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="form-label">Car weight</label>
+                                <input type="text" value="<%=bookings_view.car_weight%>" class="form-control" disabled>
+                            </div>
+                          
+
+
+                            <div class="text-right sd">
+                                <button type="button" style="background-color:#ec4747; border-color: #ec4747"
+                                    class="btn btn-danger btn-rounded"><a style="color:white;"
+                                        href="/bookings_req">Back</a></button>
+                                <div class="spinner-border  m-0 text-success" role="status">
+                                    <span class="sr-only"></span>
+                                </div>
+                            </div>
+                            <div class="text-right sd">
+                                <button type="button" style="background-color:#ec4747; border-color: #ec4747"
+                                    class="btn btn-danger btn-rounded"><a style="color:white;"
+                                        href="/category_images/<%=bookings_view.id%>">Images</a></button>
+                                <div class="spinner-border  m-0 text-success" role="status">
+                                    <span class="sr-only"></span>
+                                </div>
+                        </div>
+                        <% data.forEach((users,i)=>{%>
+                        <div class="row">
+                            <div class="column">
+                           <%= users.images %>" 
+                            </div>
+                           
+                            <%})%>
+
+                     
+                          
+
+                        </form>
+                   
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../partials/footer')%>
+
+</body>
+
+</html>

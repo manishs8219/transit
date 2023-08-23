@@ -1,0 +1,57 @@
+<style>
+	a.navbar-brand.navbar1 span {
+		margin: 11px 0 0 6px;
+		display: inline-block;
+	}
+
+
+
+	a.navbar-brand.navbar1 {
+		padding: 3px;
+	}
+
+	.navbar-nav>.dropdown-user img {
+		width: 35px;
+		height: 35px;
+		max-height: 140px;
+	}
+</style>
+<!-- Main navbar -->
+<div class="navbar navbar-inverse">
+	<div class="navbar-header">
+		<a class="navbar-brand navbar1" href="/dashboard"><img src="/images/logo1.png" alt="">  </a>
+		<ul class="nav navbar-nav visible-xs-block">
+			<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+			<li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+		</ul>
+	</div>
+	<div class="navbar-collapse collapse" id="navbar-mobile">
+		<ul class="nav navbar-nav">
+			<li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li class="dropdown dropdown-user">
+				<a class="dropdown-toggle" data-toggle="dropdown">
+					<!-- <div class="dropdown-item-avatar"> -->
+						<img alt="image" src="<%=/images/+session.user.image%>">
+
+					<!-- </div> -->
+					<span>
+						<%= session.user.name%>
+					</span>
+					<i class="caret"></i>
+				</a>
+				<ul class="dropdown-menu dropdown-menu-right">
+					<li class="<%= (title == 'admin_active'?'active':'') %>">
+						<a href="/admin_profile"><i
+								class="icon-user-plus"></i>My Profile</a></li>
+					<li class="divider"></li>
+					<li class="<%= (title == 'change_active'?'active':'') %>"><a href="/change_password"><i
+								class="icon-cog5"></i>Change Password</a></li>
+					<li id="logout"><a href="/log_out"><i class="icon-switch2"></i>Logout</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>

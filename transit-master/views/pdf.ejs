@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Website</title>
+   <meta charset="utf-8">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap"
+      rel="stylesheet">
+  
+</head>
+
+
+<body style="font-family: 'Poppins', sans-serif;box-sizing: border-box;margin: 10px auto;width: 100%;padding: 10px;border: 1px solid #ddd;border-radius: 5px;">
+<h4 style="font-size: 22px;text-align: center;margin-top: 10px;margin-bottom: 20px;"> DELIVERY RECEIPT</h4>
+   <div class="pdf" style="background: #f6f6f6;padding: 10px;box-sizing: border-box;margin-bottom: 20px;border-radius: 10px;">
+      <h3 style="margin: 0px;"> Collection From:</h3>
+      <p style="margin-top: 3px;margin-bottom: 9px;">  ${profile["booking.from_street_adress"]} <br>
+         Phone Number: ${profile["booking.from_country_code"]} - ${profile["booking.from_number"]}
+      </p>
+   </div>
+   <div class="pdf" style="background: #f6f6f6;padding: 10px;box-sizing: border-box;margin-bottom: 20px;border-radius: 10px;">
+      <h3 style="margin: 0px;"> Delivery To:</h3>
+      <p style="margin-top: 3px;margin-bottom: 9px;">  ${profile["booking.to_street_adress"]} <br>
+         Phone Number:${profile["booking.to_country_code"]} - ${profile["booking.to_number"]}
+      </p>
+   </div>
+   <div class="table_data" style="margin-bottom: 40px;">
+      <table style="width: 100%;border: 1px solid #ddd;padding: 10px;text-align: left;border-radius: 6px;">
+         <tbody><tr>
+            <th style="padding: 10px;"> Item Id</th>
+            <th style="padding: 10px;"> Item Description</th>
+            <th style="padding: 10px;">€ Balance to be paid</th>
+         </tr>
+         <tr>
+            <td style="background: #f9f9f9;padding: 10px;"> ${payment_detail.item_code}</td>
+            <td style="background: #f9f9f9;padding: 10px;"> ${profile.CategoryName}</td>
+            <td style="background: #f9f9f9;padding: 10px;">€ ${payment_detail.transporter_fee}</td>
+         </tr>
+      </tbody></table>
+   </div>
+   <div class="signs">
+      <h2 style="font-size: 20px;"> Collection Confirmation</h2>
+      <h4 style="text-align: right;margin-top: 40px;"> Signature</h4>
+   </div>
+   <div class="signs">
+      <h2 style="font-size: 20px;"> Delivery Confirmation</h2>
+      <h4 style="text-align: right;margin-top: 40px;"> Signature</h4>
+   </div>
+   
+
+
+</body>
+</html>

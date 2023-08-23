@@ -1,0 +1,140 @@
+<%- include('partials/header')%>
+    <style>
+      a.usrs111 .card.card-statistic-1 {
+    background: #263238;
+    border-radius: 11px;
+    padding: 12px 3px;
+    margin-bottom: 20px;
+}
+        a.usrs111.blue1 .card.card-statistic-1 {
+            background: #39b2d0;
+
+        }
+
+        a.usrs111 .card-icon i {
+            font-size: 37px;
+            color: #fff;
+            margin: 10px 0 0 10px;
+            opacity: 0.3;
+            transition: all ease 0.5s;
+        }
+
+        a.usrs111 h4 {
+            padding: 0 10px 7px;
+            text-transform: capitalize;
+        }
+
+        a.usrs111:hover .card-icon i {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+        .card-header span{
+            font-size: 20px;
+        }
+    </style>
+    <% if(msg !='' ) { %>
+		<div class="alert alert-success msg"
+			style="position: absolute; z-index: 9999; color:white; background-color: #195780; right: 10px; top: 10px;">
+			<span style="font-size: 16px;">
+				<%= msg %>
+			</span>
+		</div>
+		<% } %>
+
+ 
+
+            <body>
+                <%- include('partials/navbar')%>
+                    <%- include('partials/sidebar')%>
+                        <div class="content">
+                            <div class="row">
+                            <div class="col-md-4">
+                                <div class="content_items">
+                                    <a href="users" class="usrs111">
+                                        <div class=" card card-statistic-1" style="background-color: blueviolet;">
+                                            <div class="usrs11">
+                                                <div class="card-icon ">
+                                                    <i class="icon-users4"></i>
+                                                </div>
+                                                <div class="card-wrap">
+                                                    <div class="card-header">
+                                                        <h4 style="color:#fff;">users <span>
+                                                            <%= usercount%>
+                                                               
+                                                            </span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="content_items">
+                                    <a href="/transport_users" class="usrs111">
+                                        <div class=" card card-statistic-1" style="background-color: #eab77b;">
+                                            <div class="usrs11">
+                                                <div class="card-icon ">
+                                                    <i class="icon-truck"></i>
+                                                </div>
+                                                <div class="card-wrap">
+                                                    <div class="card-header">
+                                                        <h4 style="color:#fff;">Transporters <span>
+                                                            <%= trans_usercount%>
+                                                               
+                                                            </span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                       
+                        <div class="col-md-4">
+                            <div class="content_items" style="border-radius:25px; ">
+                                <a href="/transporter_ratings" class="usrs111 blue1">
+                                    <div class=" card card-statistic-1" style="background-color: #5db523;">
+                                        <div class="card-icon ">
+                                            <i class="glyphicon glyphicon-book"></i>
+                                        </div>
+                                        <div class="card-wrap">
+                                            <div class="card-header">
+                                                <h4 style="color:#fff;">Ratings<span>
+                                                    <%= rating_usercount%>
+                                                               
+                                                    </span></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="content_items" style="background-color: #333; border-radius:25px; ">
+                                <a href="/withdraw" class="usrs111 blue1">
+                                    <div class=" card card-statistic-1">
+                                        <div class="card-icon ">
+                                            <i class="icon-coin-dollar"></i>
+                                        </div>
+                                        <div class="card-wrap">
+                                            <div class="card-header">
+                                                <h4 style="color:#fff;">Withdraw Requests<span>
+                                                      <%=withdraw_usercount%> 
+                                                    </span></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    </div>
+                      
+                        
+                        <%- include('partials/footer')%>
+            </body>
+            </html>

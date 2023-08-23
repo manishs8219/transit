@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Admin|Trans-it </title>
+
+	<!-- Global stylesheets -->
+	<link rel="icon" type="image/x-icon" href="/images/log.png">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+		type="text/css">
+	<link href="/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="/assets/css/core.css" rel="stylesheet" type="text/css">
+	<link href="/assets/css/components.css" rel="stylesheet" type="text/css">
+	<link href="/assets/css/colors.css" rel="stylesheet" type="text/css">
+
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script type="text/javascript" src="/assets/js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="/assets/js/core/libraries/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/loaders/blockui.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+
+	<script type="text/javascript" src="/assets/js/plugins/visualization/d3/d3.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/forms/styling/switchery.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/forms/styling/uniform.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/ui/moment/moment.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/pickers/daterangepicker.js"></script>
+	<script type="text/javascript" src="/assets/js/core/app.js"></script>
+	<script type="text/javascript" src="/assets/js/pages/dashboard.js"></script>
+	<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+	<!-- /theme JS files -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+	<style>
+		button.btn.btn-primary {
+			margin-top: 13px;
+			border-radius: 42px;
+		}
+
+		.page-content {
+			height: 100vh;
+
+		}
+
+		button.swal2-confirm.btn.btn-danger {
+			margin-left: 5px;
+		}
+
+		.error {
+			color: rgb(179, 56, 72);
+			background-color: white;
+		}
+
+		button.btn.btn-danger.btn-rounded {
+			margin-right: 224px;
+		}
+
+		span.text-semibold {
+			font-size: 21px;
+			font-family: initial;
+		}
+
+		span {
+			font-size: 13px;
+		}
+		a.navbar-brand.navbar1 img {
+    width: 117px !important;
+    /* background-color: white; */
+}
+		a.navbar-brand.navbar1 {
+    background-color: white;
+	width: 100%;
+}
+a.navbar-brand.navbar1 img {
+    height: auto;
+    width: 110px;
+    float: left;
+    margin-left: 86px;
+    
+}
+	</style>
+</head>
+<% if(msg !='' ) { %>
+<div class="alert alert-success msg"
+	style="position: absolute; z-index: 9999; color:white; background-color: #195780; right: 10px; top: 10px;">
+	<span style="font-size: 16px;">
+		<%= msg %>
+	</span>
+</div>
+<% } %>

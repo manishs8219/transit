@@ -1,0 +1,76 @@
+<%- include("../partials/header")%>
+
+<body>
+   
+        <%- include("../partials/navbar")%>
+            <%- include("../partials/sidebar")%>
+                <div class="content">
+                    <div class="panel panel-flat">
+                        <div class="panel-body">
+                            <form id="basic-form" class="form-horizontal" action="/update_policy" method="post"
+                                enctype="multipart/form-data">
+                                <fieldset class="content-group">
+                                    <h2 class="text-bold">Privacy & Policy</h2>
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-1">Title <span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-lg-11">
+                                            <input type="text" name="title" value="<%=policys.title%>"
+                                                class="form-control" placeholder="Enter your title"
+                                                aria-required="true">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-1">Content<span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-lg-11">
+                                            <textarea id="summernote" name="content"><%=policys.content%></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-primary">Update <i
+                                                class="icon-arrow-right14 position-right"></i></button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    <%- include("../partials/footer")%>
+    </body>
+
+    </html>
+    <script>
+        $(document).ready(function () {
+            $('#summernote').summernote();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            console.log('=================tgfhjugfhhgfhgfhgfhjgfftjhgfhnjgf==========');
+            $("#basic-form").validate({
+                rules: {
+                    title: {
+                        required: true,
+                    },
+                    content: {
+                        required: true,
+                    },
+                },
+                messages: {
+                    title: {
+                        required: "Enter the tittle"
+                    },
+                    content: {
+                        required: "Enter the content"
+                    },
+                    highlight: function (element) {
+                        $(element).parent().addClass('error')
+                    },
+                }
+            });
+        });    
+    </script>
+
+      <!-- <script>
+        CKEDITOR.replace('content');
+    </script> -->
